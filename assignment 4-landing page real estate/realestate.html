@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>real estate web page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Poppins
+
+
+        }
+        .navbar{
+            display: flex;
+            height: 60px;
+            width: 100%;
+            justify-content: space-between;
+
+        }
+        .logodiv{
+            padding-left: 20px;
+            padding-top: 25px;
+        }
+        .logodiv span{
+            font-size: 20px;
+            font-weight: 900;
+            width: 30px;
+            padding-top: 25px;
+        }
+        .middiv{
+            padding-top: 25px;
+        }
+        .middiv li{
+            float: left;
+            list-style-type: none;
+
+        }
+        .middiv li a{
+            text-decoration: none;
+            padding-right: 20px;
+            color: black;
+        }
+        .rightdiv{
+            display: flex;
+            gap: 20px;
+            padding-top: 25px;
+            padding-right: 20px;
+        }
+        .rightdiv span{
+            font-size: 15px;
+        }
+        .rightdiv button{
+            padding-top: 2px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 2px;
+            background-color: white;
+            border: 1px solid ;
+            border-radius: 25px
+        }
+        .container1{
+            width: 100%;
+            height: 500px;
+            background-image: linear-gradient(to right,  #C1DEE8, #FBD9B9);
+            border-radius: 25px;
+            display: flex;
+            gap: 300px;
+        }
+        .leftbox1{
+            width: 370px;
+            padding-top: 50px;
+            padding-left: 60px;
+        }
+        .text1{
+            padding-bottom: 5px;
+            font-size: 16px;
+        }
+        .text2{
+            width: 100%;
+            padding-bottom: 10px;
+            font-size:50px ;
+            font-weight:600; 
+        }
+        .text3{
+            padding-bottom: 10px;
+            font-size: 13px;
+            
+        }
+        .text4 button{
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 60px;
+            padding-bottom: 5px;
+            border-radius: 40px;
+            border: 1px solid white;
+            color: rgb(156, 156, 156);
+            font-size: 12px;
+        }
+        .container2{
+        height: 350px;
+        width:100%;
+        padding-top: 70px;
+        padding-bottom: 90px;
+       }
+       .cards{
+
+        display: flex;
+        gap: 90px;
+        padding-left: 160px;
+       }
+
+       .card1{
+        
+        height: 250px;
+        width: 250px;
+        align-content: center;
+        padding-left: 30px;
+       }
+       .box1{
+        height: 410px;
+        width: 300px;
+        border: 1px solid rgb(206, 206, 206);
+        border-radius: 10px;
+        
+       }
+       .box1 h4{
+        font-size: 17px;
+       }
+       .box1 h5{
+        font-size: 13px;
+        font-weight: 100;
+       }
+       .contentbox1{
+        padding-left: 80px;
+        font-size: 16px;
+        font-weight: 400;
+       }
+       .contentbox2{
+        padding-left: 70px;
+        font-size: 50px;
+        font-weight: 600;
+       }
+       .contentbox3{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+       }
+       .container4{
+        margin-top: 100px;
+        height: 100px;
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+       }
+       .container5{
+        width: 100%;
+        height: 400px;
+        padding-top: 140px;
+        display: flex;
+        gap: 200px;
+
+       }
+       .contentleft{
+        padding-left: 100px;
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logodiv">
+            <span>BUILD</span>
+        </div>
+        <div class="middiv">
+            <ul>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Agents</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Listings</a></li>
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+            </ul>
+        </div>
+        <div class="rightdiv">
+            <div><span>Other services</span></div>
+            <div ><button type="button">Contact Us</button></div>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="leftbox1">
+            <div class="text1"> <span>Welcome to Realstate</span></div>
+            <div class="text2"><span>Manage Your Property</span></div>
+            <div class="text3"><span>Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</span></div>
+            <div class="text4"><button>Enter your email</button></div>
+        </div>
+        <div class="rightbox1">
+            <img src="https://s3-alpha-sig.figma.com/img/6d39/28c5/2aad0e192263b5d9f0fecd850eb7e959?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CK80uKInWomjNJFo0Wh9UZXRnkHv2vO5Ktg0pIy~2JnjNcqjFjn9bWesnsuixqxprXuIs9~xQzkzAU6EArvi9JL~oau5bmMWr244MSKL4p32605d8NFh4F8Fww2pNYQm6E5I~rRD5cB1NBESrRJ0D5rGFeh~aSTZe1JE-6FgFNx57rknPj4mRqAsSNmTa1IHhhHexi1g7FJHyMRY9ppMQPtWFeYrkakyv9jKIFf7EDEC18Z7N70ehkUWZrYlMn9REH4efJJn-k11TEe6Vpji5R8nx9O7rnAO-sZ-llEOMmikjK5PKyrqzcqGMjwVkEB3X-vddu-QcR5GgVY9sNtzWQ__" alt="" style="width: 750px; height: 750px; margin-top: -100px;">
+        </div>
+    </div>
+    <div class="container2">
+        <h3 style="text-align: center; font-size: 40px; font-weight: 1200; padding-top: 20px;">Everything should be this easy.</h3>
+        <div class="cards">
+            <div class="card1">
+                <div style="height: 40px; width: 40px; background-color: #EBF9FF; border-radius: 10px; ">
+                   <div style="padding: 10px; ">
+                    <i class="fa-solid fa-message" style="color: #58BF52;" ></i>
+                    </div>
+                </div  >
+                <div style="padding-top: 10px;  font-weight: bold; font-size: larger;">
+                    Answer questions
+                </div>
+                <div >
+                    Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                </div>
+            </div>
+            <div class="card1">
+                <div style="height: 40px; width: 40px; background-color: #EBF9FF; border-radius: 50%; ">
+                   <div style="padding: 10px;">
+                    <i class="fa-solid fa-comment" style="color: #FF791A;"></i>
+                    </div>
+                </div>
+                <div style="padding-top: 10px;  font-weight: bold; font-size:larger;">
+                    Select a quote
+                </div>
+                <div>
+                    Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                </div>
+            </div>
+            <div class="card1">
+                <div style="height: 40px; width: 40px; background-color: #EBF9FF; border-radius: 50%; ">
+                   <div style="padding: 10px; ">
+                    <i class="fa-solid fa-pen" style="color: #3741B5;"></i>
+                    </div>
+                </div>
+                <div style="padding-top: 10px; font-weight: bold; font-size: larger;">
+                    Get registered
+                </div>
+                <div >
+                    Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="container3">
+        <div class="contentbox1"><span>Best Project Of the years</span></div>
+        <div class="contentbox2"><span>Our recent projects</span></div>
+        <div class="contentbox3">
+            <div class="box1">
+                <div>
+                    <img src="https://s3-alpha-sig.figma.com/img/6829/ca81/fc62f6b06dee230e58bc973d45faeeac?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RJM9rSWZqWNCjwXRrvK3LX8NzX6HB~EXReuXyD63hf7pBesjuXxBUNfc6rUEh1lSfcBCjd1h6dVPp6K-hX4G3L5f~3a17BjW0eQHaSuFQGrF8k-dlZ8tUXVVaP1sapi7l5GWbLWz7ee7qjt2xYh7u3~b8puCijG3wiTBLXNjmDbSzCL6DGoRWzjIIFZ7eO2iwMQ38Cu2yO5K9UuRaowkZJ0YvQgqMZ0gvs2vNKInNEmymEg0a-8FWgoLNnkw7nkDKfNwHF9eVH85vqslH4ieTgCyeuVBWEz2Q~YR4yBpYpQNmzEhiJ3YFrUxX8BMnlccLvEbKehH0PSkAcGvprlcaQ__" alt="" style="height: 300px; width: 300px; border-radius: 5px;">
+                </div>
+                <div style="padding-left: 15px;">
+                    <div>
+                        <h4 >Sobha Hearland II Villas</h4>
+                    </div>
+                    <div>
+                        <h5>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum.</h5>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-regular fa-star" style="color: #c2c2c2;"></i><span style="font-size: small; font-weight: 200; padding-left: 8px;" >4.83</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box1">
+                <div>
+                    <img src="https://s3-alpha-sig.figma.com/img/6829/ca81/fc62f6b06dee230e58bc973d45faeeac?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RJM9rSWZqWNCjwXRrvK3LX8NzX6HB~EXReuXyD63hf7pBesjuXxBUNfc6rUEh1lSfcBCjd1h6dVPp6K-hX4G3L5f~3a17BjW0eQHaSuFQGrF8k-dlZ8tUXVVaP1sapi7l5GWbLWz7ee7qjt2xYh7u3~b8puCijG3wiTBLXNjmDbSzCL6DGoRWzjIIFZ7eO2iwMQ38Cu2yO5K9UuRaowkZJ0YvQgqMZ0gvs2vNKInNEmymEg0a-8FWgoLNnkw7nkDKfNwHF9eVH85vqslH4ieTgCyeuVBWEz2Q~YR4yBpYpQNmzEhiJ3YFrUxX8BMnlccLvEbKehH0PSkAcGvprlcaQ__" alt="" style="height: 300px; width: 300px; border-radius: 5px;">
+                </div>
+                <div style="padding-left: 15px;">
+                    <div>
+                        <h4 >Sobha Hearland II Villas</h4>
+                    </div>
+                    <div>
+                        <h5>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum.</h5>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-regular fa-star" style="color: #c2c2c2;"></i><span style="font-size: small; font-weight: 200; padding-left: 8px;" >4.83</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box1">
+                <div>
+                    <img src="https://s3-alpha-sig.figma.com/img/6829/ca81/fc62f6b06dee230e58bc973d45faeeac?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RJM9rSWZqWNCjwXRrvK3LX8NzX6HB~EXReuXyD63hf7pBesjuXxBUNfc6rUEh1lSfcBCjd1h6dVPp6K-hX4G3L5f~3a17BjW0eQHaSuFQGrF8k-dlZ8tUXVVaP1sapi7l5GWbLWz7ee7qjt2xYh7u3~b8puCijG3wiTBLXNjmDbSzCL6DGoRWzjIIFZ7eO2iwMQ38Cu2yO5K9UuRaowkZJ0YvQgqMZ0gvs2vNKInNEmymEg0a-8FWgoLNnkw7nkDKfNwHF9eVH85vqslH4ieTgCyeuVBWEz2Q~YR4yBpYpQNmzEhiJ3YFrUxX8BMnlccLvEbKehH0PSkAcGvprlcaQ__" alt="" style="height: 300px; width: 300px; border-radius: 5px;">
+                </div>
+                <div style="padding-left: 15px;">
+                    <div>
+                        <h4 >Sobha Hearland II Villas</h4>
+                    </div>
+                    <div>
+                        <h5>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum.</h5>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-regular fa-star" style="color: #c2c2c2;"></i><span style="font-size: small; font-weight: 200; padding-left: 8px;" >4.83</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container4">
+        We are a global, boutique real <br>estate brokerage
+    </div>
+    <div class="container5">
+        <div class="contentleft" >
+            <div style="font-size: 30px;font-weight: 600;padding-left: 99px;">
+                The transfer of real estate
+            </div>
+            <div style="text-justify: auto; padding-left: 100px; padding-top: 30px;">
+                Lorem ipsum dolor sit amet consectetur. <br> Feugiat ut aliquet sit pellentesque sollicitudin. <br> Egestas faucibus  senectus consectetur. <br> Mattis elit scelerisque vehicula ante nunc. <br> Tellus consequat nisl quis nisl justo.
+            </div>
+            <div style="padding-left: 99px; padding-top: 30px;">
+                <button type="button" style="padding: 10px; background-color: black; color: white; border: 1px solid white; border-radius: 30px;">Book Now!</button>
+                <button type="button" style="padding: 10px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0); border-radius: 30px;">Read More</button>
+            </div>
+            <div style="display: flex;">
+                <div>
+                    <div style="padding-left: 100px; padding-top: 50px; font-size: 45px; font-weight: 900;">12+</div>
+                    <div style="padding-left: 100px; ">Customers</div>
+                </div>
+                <div>
+                    <div style="padding-left: 90px; padding-top: 50px; font-size: 45px; font-weight: 900;">14+</div>
+                    <div style="padding-left: 90px; ">Office</div>
+                </div>
+                <div>
+                    <div style="padding-left: 100px; padding-top: 50px; font-size: 45px; font-weight: 900;">10+</div>
+                    <div style="padding-left: 100px; ">Students</div>
+                </div>
+            </div>
+        </div>
+        <div class="contentright">
+            <img src="Capture.PNG" alt="" style="border-radius: 30px;">
+        </div>
+    </div>
+    <div class="container1" style="height: 350px; margin-top: 200px;">
+        <div class="leftbox1">
+            
+            <div class="text2"><span>Subscribe Our Newsletter</span></div>
+            <div class="text3"><span>Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</span></div>
+            <div class="text4"><button>Enter your email</button></div>
+        </div>
+        <div class="rightbox1">
+            <img src="https://s3-alpha-sig.figma.com/img/28a3/d228/122a527d847e56351e9b7f3b8ee9e267?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=W87yT8mqngHurC19Uvab6BUN2kv4pw-ANAAHbJ9Wsg3W9vtgQGLdi77J6MNI6P-9yxYNMCOWs5lyHsa3WTsXM4kAbYu1Sj~9feTby2UIkUqHsaTwz7lowJjQdElam1CMmDWse2EyA7Hpyri6TCSJBznU-BWbUNVLcyL3qmW-pKlyl0xUGZEWSiSRmJ049hHl9tcIbc28di6X4nKaZiCHLls-84jhrVTcN3ruABSSUQyYn6C7B9FAXC0vTI5laoEqe97Nqwh3D06QSzpksH8glI0YJpMYgEx6vAKZTfVieQzXnkSqUZiYYmaJC0kcNPJtmbJf1cxZkxt-LlE7MT91Jw__" alt="" style="width: 500px; height: 500px; margin-top: -100px;">
+        </div>
+    </div>
+
+    
+</body>
+</html>

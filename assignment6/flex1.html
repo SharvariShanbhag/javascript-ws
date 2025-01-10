@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex1</title>
+  <style>
+    body,div{
+      margin: 0;
+      padding: 0;
+      background-color: rgb(246, 169, 208);
+    }
+    .container{
+      height: 100%;
+      width: 100%;
+    }
+    .header{
+      height:30px;
+      margin: 10px;
+      background-color: rgb(80, 168, 154);
+      text-align: center;
+      align-content: center;
+
+    }
+    .middle{
+      display: flex;
+    }
+    .leftdiv{
+      height: 400px;
+      width: 40%;
+      background-color: rgb(2, 122, 102);
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      text-align: center;
+      align-content: center;
+    }
+    .rightdiv{
+      display: flex;
+      height: 400px;
+      width: 60%;
+      background-color: rgb(233, 106, 106);
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-content: flex-end;
+      margin: 10px;
+      text-align: center;
+      
+    }
+    
+    .img1{
+      height: 100px;
+      width: 100px;
+      background-color: gray;
+      margin: 30px;
+      text-align: center;
+      align-content: center;
+    }
+    .footer{
+      height: 50px;
+      background-color: rgb(79, 165, 79);
+      margin: 10px;
+      text-align: center;
+      align-content: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">HEADER</div>
+    <div class="middle">
+      <div class="leftdiv"> article1</div>
+      <div class="rightdiv">
+        
+        
+        <div class="img1">img1</div>
+        <div class="img1">img2</div>
+        <div class="img1">img3</div>
+      
+      </div>
+    </div>
+    <footer class="footer">footer</footer>
+    
+  </div>
+</body>
+</html>

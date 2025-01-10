@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h3{
+            padding-left: 180px ;
+            text-decoration: underline;
+        }
+        .container{
+            
+            background-color: rgb(21, 219, 205);
+            height: 400px;
+            width: 500px;
+            padding: 10px 0px 10px 40px;
+            
+        }
+        .formrow{
+            width: 100%;
+            padding-top: 20px;
+        }
+        .labelcol{
+            float: left;
+            width:40%;
+            
+            
+        }
+        .inputcol{
+            width:60%;
+            display: flex;
+            
+        }
+        input[type="email"], input[type="date"],input[type="tel"],input[type="text"] {
+            padding: 5px;
+            border: 1px bold rgb(159, 43, 43);
+            border-radius: 4px;
+            background-color: rgb(255, 255, 255);
+            width: 200px;
+        }
+        .form-btn{
+            display: flex;
+            padding-top: 50px;
+            gap: 20px;
+            padding-left: 100px;
+            
+        }
+        button{
+            background-color: rgb(124, 123, 123);
+            padding: 10px 30px;
+            border: none;
+            border-radius: 3px;
+        }
+        button:hover{
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h3>Project Management</h3>
+        <form action="">
+            <div class="container" style="border-radius: 4px;">
+            
+                <div class="formrow">
+                    <div class="labelcol">
+                        <label for="Firstname">Project Name</label>
+                    </div>
+                    <div class="inputcol">
+                        <input type="text" id="firstname" name="firstname" placeholder="Project Name">
+                  </div>
+                <div>
+
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="lastname">Assigned To</label>
+                </div>
+                <div class="inputcol">
+                    <input type="text" id="lastname" name="lastname" placeholder="ex. seri xyz">
+                </div>
+            <div>
+
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="dob">start date</label>
+                </div>
+                <div class="inputcol">
+                    <input type="date" id="dob" name="dob" >
+                </div>
+            </div>
+
+            <div class="formrow">
+                <div class="labelcol">
+                    <label for="dob">End Date</label>
+                </div>
+                <div class="inputcol">
+                    <input type="date" id="dob" name="dob">
+                </div>
+            </div>
+
+            <div class="formrow">
+                <div class="labelcol">
+                    Priority
+                </div>
+                <div class="inputcol">
+                    <span><input type="radio" >High</span>
+                    <span><input type="radio" >Average</span>
+                    <span><input type="radio" >Low</span>
+                </div>
+            </div>
+            <div class="formrow">
+            
+                    <div class="labelcol">
+                        <label for="dec">Description</label></div>
+                        <div class="inputcol"></div>
+                        <input type="text" id="dec" name="dec">
+                    </div>
+            </div>
+                <div class="form-btn">
+                    <button type="submit" style="background-color: rgb(40, 219, 40);">submit</button>
+                    <button type="Reset" style="background-color: rgb(55, 55, 227);">Reset</button>
+                </div>  
+        </div>
+        
+    </form>
+    </div>
+</body>
+</html>

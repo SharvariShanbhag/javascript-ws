@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form9</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container{
+            display: flex;
+        }
+        .leftdiv{
+            height: 400px;
+            width: 300px;
+            background-color: purple;
+        }
+        .userlogo{
+            padding-left: 120px;
+            padding-top: 150px;
+        }
+        .rightdiv{
+            width: 700px;
+            height: 320px;
+            background-color: rgb(255, 183, 237);
+            padding: 40px;
+           
+        }
+        .buttons{
+            padding-left: 450px;
+            
+        }
+        .button1{
+            border: 1px solid gold;
+            background-color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .button2{
+            border: none;
+            background-color: rgb(237, 17, 245);
+            padding: 5px;
+            border-radius: 3px;
+            color: white;
+        }
+        .formrow1{
+            
+            width: 450px;
+            display: flex; 
+            margin-bottom: 30px;
+            border-radius: 8px;
+            background-color: white;
+        }
+       
+        .inputcol{
+           padding-top: 40px;
+           font-size: 18px;
+           border-right: 1px solid gray;
+           padding: 10px 15px;   
+        }
+        .formrow1 input{
+            border: none;
+            width: 450px;
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .checkBox{
+            padding-left: 120px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .buttonlogin{
+            background-image:linear-gradient(to right, rgb(223, 71, 154),purple);
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            border: none
+        }
+       .loginbtn{
+        
+        padding-left: 120px;
+        padding-top: 8px;
+       }
+       .loginbtn button{
+        color: white;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="leftdiv">
+            <div class="userlogo">
+                <div style="width: 50px; height: 50px; background-color: white; border-radius: 50%;"><i class="fa-solid fa-user" style="padding: 15px; font-size: x-large;"></i></div>
+            </div>
+            <div style="padding-left: 119px;padding-top: 5px; color: white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 20px;">
+                LOGIN
+            </div>
+        </div>
+        <div class="rightdiv">
+            <div class="buttons">
+                <button type="button" class="button1">Sign Up</button>
+                <button type="button" class="button2">LOGIN</button>
+            </div>
+
+            <div style="padding-left: 120px; padding-top: 80px;">
+                <div class="formrow1">
+                    <span class="inputcol"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="text" placeholder="EMAIL">
+                    
+                </div>
+            </div>
+            <div style="padding-left: 120px;">
+                <div class="formrow1">
+                    <span class="inputcol"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" placeholder="Password">
+                    
+                </div>
+            </div>
+            <div class="checkBox">
+                <input type="checkbox">I have accepted....
+            </div>
+            <div class="loginbtn">
+                <button type="button" class="buttonlogin">LOGIN</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

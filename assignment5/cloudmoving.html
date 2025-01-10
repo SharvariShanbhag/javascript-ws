@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Cloud Animation</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.sky {
+  background-color: #50bde8;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cloud {
+  font-size: 100px;  
+  position: absolute;
+  color: rgb(255, 255, 255);
+  opacity: 0.8;
+  top: 50%;  
+  left: -200px; 
+  animation: moveCloud 30s linear infinite;  
+}
+
+@keyframes moveCloud {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);  
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="sky">
+    <i class="fas fa-cloud cloud"></i>
+  </div>
+</body>
+</html>

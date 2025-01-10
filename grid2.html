@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid2</title>
+    <style>
+        .maincontainer{
+            background-color: cadetblue;
+            display: grid;
+            gap: 10px;
+            grid-template-areas: 'b1 b1 b2'
+                                'b3 b3 b3'
+                                'b4 b4 b5';
+                                padding: 10px ;
+                                
+        }
+        .boxsize{
+            height: 100px;
+            border: 1px solid black;
+        }
+        .box1{
+            grid-area: b1;
+            background-color: rgb(60, 60, 189);
+        }
+        .box2{
+           grid-area: b2;
+           background-color: brown; 
+        }
+        .box3{
+            grid-area: b3;
+            background-color: chocolate;
+        }
+        .box4{
+            grid-area: b4;
+            background-color: chartreuse;
+        }
+        .box5{
+            grid-area: b5;
+            background-color: crimson;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="maincontainer">
+        <div class="box1 boxsize">box1</div>
+        <div class="box2 ">box2</div>
+        <div class="box3 boxsize">box3</div>
+        <div class="box4 boxsize">box4</div>
+        <div class="box5 boxsize">box5</div>
+    </div>
+</body>
+</html>
