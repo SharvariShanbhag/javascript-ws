@@ -1,48 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
-  gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .layout7{
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-  
-.item8 {
-  grid-area: 1 / 2 / 5 / 6;
-}
-</style>
+            margin: auto;
+            margin-top: 50px;
+            display: grid;
+            grid-template-areas: 'cat1 cat2 cat3'
+                                 'cat4 cat5 cat6'
+                                 'cat7 cat8 cat9';
+            gap: 12px;
+            width: 616px;
+            padding: 8px;
+        }
+        .cat1{
+            grid-area: cat1;
+        }
+        .cat2{
+            grid-area: cat2;
+        }
+        .cat3{
+            grid-area: cat3;
+        }
+        .cat4{
+            grid-area: cat4;
+        }
+        .cat5{
+            grid-area: cat5;
+        }
+        .cat6{
+            grid-area: cat6;
+        }
+        .cat7{
+            grid-area: cat7;
+        }
+        .cat8{
+            grid-area: cat8;
+
+        }
+        .cat9{
+            grid-area: cat9;
+        }
+        .sizeDiv{
+            height: 200px;
+            width: 200px;
+            border: none;
+        }
+        .sizeDiv img{
+            height: 100%;
+            width: 100%;
+            object-fit:cover; 
+            transition: transform 0.3s ease;
+        }
+        .sizeDiv:hover {
+            z-index: 2; 
+        }
+        
+        .sizeDiv:hover img {
+            transform: scale(1.5);
+        }
+    </style>
 </head>
 <body>
+    <div class="layout7">
+        <div class="cat1 sizeDiv">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXvImgJg7k3G6hCoMFt4VzpTefsbLS1MW8Tw&s" alt="cat1">
+        </div>
+        <div class="cat2 sizeDiv">
+            <img src="https://shotkit.com/wp-content/uploads/bb-plugin/cache/shotkit-cat-photos-001-landscape-abada9f1c5d3dbe400349bb76b5d9d76-zybravgx2q47.jpg" alt="cat2">
+        </div>
+        <div class="cat3 sizeDiv">
+            <img src="https://wagyourtail.photography/wp-content/uploads/cat-photography-denver-11.jpg" alt="cat3">
+        </div>
+        <div class="cat4 sizeDiv">
+            <img src="https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg" alt="cat4">
+        </div>
+        <div class="cat5 sizeDiv">
+            <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="cat5">
+        </div>
+        <div class="cat6 sizeDiv">
+          <img src="https://www.dailydogtag.com/wp-content/uploads/2020/05/%C2%A9K-Schulz-Photography-lifestyle-cat-portraits-11.jpg" alt="cat6">
+        </div>
+        <div class="cat7 sizeDiv">
+          <img src="https://images-pw.pixieset.com/elementfield/19533753/L-60-69c5b4b8.jpg" alt="cat7">
+        </div>
+        <div class="cat8 sizeDiv">
+          <img src="https://wagyourtail.photography/wp-content/uploads/cat-photography-denver-9.jpg" alt="cat8">
+        </div>
+        <div class="cat9 sizeDiv">
+          <img src="https://t4.ftcdn.net/jpg/08/61/08/07/360_F_861080729_vydKjzqT686QpPd977YGJtmfPiiYkecL.jpg" alt="cat9">
+        </div>
 
-<div class="grid-container">
-  <div class="item1">1</div>
-  <div class="item2">2</div>
-  <div class="item3">3</div>  
-  <div class="item4">4</div>
-  <div class="item5">5</div>
-  <div class="item6">6</div>
-  <div class="item7">7</div>
-  <div class="item8">8</div>  
-  <div class="item9">9</div>
-  <div class="item10">10</div>
-  <div class="item11">11</div>
-  <div class="item12">12</div>
-  <div class="item13">13</div>
-  <div class="item14">14</div>
-  <div class="item15">15</div>
-</div>
-
+    </div>
 </body>
 </html>
-
-
