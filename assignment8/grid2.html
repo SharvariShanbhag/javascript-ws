@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid with Images</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: repeat(5, 200px);
+            grid-template-columns: repeat(4, 200px);
+            grid-template-areas: 
+                'f1 f2 f3 f3'
+                'f4 f4 f3 f3'
+                'f4 f4 f3 f3'
+                'f5 f5 f6 f6'
+                'f5 f5 f6 f6';
+        }
+        .container div {
+            position: relative;
+            overflow: hidden;
+        }
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .item1 {
+            grid-area: f1;
+        }
+        .item2 {
+            grid-area: f2;
+        }
+        .item3 {
+            grid-area: f3;
+        }
+        .item4 {
+            grid-area: f4;
+        }
+        .item5 {
+            grid-area: f5;
+        }
+        .item6 {
+            grid-area: f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1 item"><img src="https://as1.ftcdn.net/v2/jpg/00/69/14/20/1000_F_69142052_60MR1nsjtfI33Vt7754lzPJwEVR6JoJG.jpg" alt="Image 1"></div>
+        <div class="item2 item"><img src="https://as1.ftcdn.net/v2/jpg/01/60/44/90/1000_F_160449025_J0zNltOLVtR8FwjwxfiKiDgEmBI3mM6w.jpg" alt="Image 2"></div>
+        <div class="item3 item"><img src="https://as2.ftcdn.net/v2/jpg/01/75/97/03/1000_F_175970314_MuoA97QkmEwzv8Qk9NUMBDlxtkTTxH1A.jpg" alt="Image 3"></div>
+        <div class="item4 item"><img src="https://as1.ftcdn.net/v2/jpg/04/39/73/28/1000_F_439732886_GaTLhXkhJOVVwHPoAxUnYZRhzjb9h2Ro.jpg" alt="Image 4"></div>
+        <div class="item5 item"><img src="https://as2.ftcdn.net/v2/jpg/04/40/64/07/1000_F_440640767_8mKtOaL9YzCoO8tdt6UGrCHX6WkdlLpd.jpg" alt="Image 5"></div>
+        <div class="item6 item"><img src="https://as2.ftcdn.net/v2/jpg/02/59/87/43/1000_F_259874354_vNlTNUD93osa54Ik9SMbXzpZu2mOKzo5.jpg" alt="Image 6"></div>
+    </div>
+</body>
+</html>
