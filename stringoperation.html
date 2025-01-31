@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        textarea {
+            width: 300px;
+            height: 100px;
+            margin: 10px 0;
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            width: 300px;
+            display: inline-block;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: orange;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: orangered;">Operations on String</h1>
+    <textarea id="textArea" placeholder="Enter your text here"></textarea><br>
+    <div class="result" id="result">Result: </div><br>
+    <button onclick="toUpperCase()">To Upper Case</button>
+    <button onclick="toLowerCase()">To Lower Case</button>
+    <button onclick="camelCase()">Camel Case</button>
+    <button onclick="reverseString()">Reverse String</button>
+    <button onclick="countVowels()">Count Vowels</button>
+    <button onclick="countConsonants()">Count Consonants</button>
+    <button onclick="countWords()">Count Words</button>
+    <button onclick="mostFrequentCharacter()">Most Frequent Character</button>
+    <button onclick="checkAnagrams()">Check for Anagrams</button>
+    <button onclick="longestWord()">Longest Word</button>
+
+    <script>
+        function getText() {
+            return document.getElementById('textArea').value.trim();
+        }
+
+        function displayResult(message) {
+            document.getElementById('result').textContent = "Result: " + message;
+        }
+
+        function toUpperCase() {
+            displayResult(getText().toUpperCase());
+        }
+
+        function toLowerCase() {
+            displayResult(getText().toLowerCase());
+        }
+
+        function camelCase() {
+            let words = getText().split(' ');
+            let camel = words.map((word, index) => 
+                index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            ).join('');
+            displayResult(camel);
+        }
+
+        function reverseString() {
+            displayResult(getText().split('').reverse().join(''));
+        }
+
+        function countVowels() {
+            let vowels = getText().match(/[aeiouAEIOU]/g);
+            displayResult(vowels ? vowels.length : 0);
+        }
+
+        function countConsonants() {
+            let consonants = getText().match(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/g);
+            displayResult(consonants ? consonants.length : 0);
+        }
+
+        function countWords() {
+            let words = getText().split(/\s+/).filter(word => word.length > 0);
+            displayResult(words.length);
+        }
+
+        function mostFrequentCharacter() {
+            let text = getText().replace(/\s+/g, '');
+            let frequency = {};
+            for (let char of text) {
+                frequency[char] = (frequency[char] || 0) + 1;
+            }
+            let maxFreq = 0, maxChar = '';
+            for (let char in frequency) {
+                if (frequency[char] > maxFreq) {
+                    maxFreq = frequency[char];
+                    maxChar = char;
+                }
+            }
+            displayResult(maxChar || 'No characters found');
+        }
+
+        function checkAnagrams() {
+            let text = getText();
+            let [str1, str2] = text.split(',');
+            if (str1 && str2) {
+                str1 = str1.replace(/\s+/g, '').toLowerCase();
+                str2 = str2.replace(/\s+/g, '').toLowerCase();
+                let isAnagram = str1.split('').sort().join('') === str2.split('').sort().join('');
+                displayResult(isAnagram ? "Anagrams" : "Not Anagrams");
+            } else {
+                displayResult("Enter two strings separated by a comma");
+            }
+        }
+
+        function longestWord() {
+            let words = getText().split(/\s+/);
+            let longest = words.reduce((a, b) => a.length > b.length ? a : b, '');
+            displayResult(longest || 'No words found');
+        }
+    </script>
+</body>
+</html> 
