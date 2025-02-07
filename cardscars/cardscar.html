@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cardscar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .card1 {
+        height: 400px;
+        width: 280px;
+    }
+    .carimg {
+        height: 200px;
+        width: 266px;
+    }
+    .carColorBtn button {
+        background-color: rgb(240, 240, 110);
+        border: none;
+        padding: 4px 10px;
+        border-radius: 10px;
+    }
+    .cardContent {
+        margin: 20px;
+        background-color: rgb(223, 223, 223);
+        padding-top: 10px;
+    }
+    .color-btn {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+    }
+    .yellow { background-color: rgb(240, 240, 110); }
+    .gray { background-color: rgb(99, 99, 99); }
+    .black { background-color: rgb(0, 0, 0); }
+    .white { background-color: rgb(255, 255, 255); border: 1px solid black; }
+    .addCart {
+        width: 100px;
+    }
+    .addCart button {
+        background-color: rgb(240, 240, 110);
+        border: none;
+    }
+    .paddings {
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+</style>
+<body>
+    <div class="card1">
+        <div class="carimg">
+            <img id="carImage" src="https://m.atcdn.co.uk/vms/media/7b6c98cc524b4300958c7d667276e8f5.jpg" alt="carimage" style="height: 200px;">
+        </div>
+        <div class="cardContent">
+            <div class="carColorBtn paddings"><button id="colorButton">CAR</button></div>
+            <div class="paddings"><h3>Mercedes-Benz C300 2025</h3></div>
+            <div style="display: flex; gap: 15px;" class="paddings">
+                <span><i class="fa-solid fa-car"></i></span><p>Mileage: 4,000 miles</p>
+            </div>
+            <div style="display: flex; gap: 15px;" class="paddings">
+                <span><i class="fa-solid fa-gas-pump"></i></span><p>Fuel 25Mpg</p>
+            </div>
+            <div style="display: flex; gap: 15px;" class="paddings">
+                <span><i class="fa-solid fa-shield"></i></span><p>Safety:</p>
+                <span><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i></span>
+            </div>
+            <div class="paddings"><h3>Pick a color:</h3></div>
+            <div style="display: flex; gap: 10px;" class="paddings">
+                <button class="color-btn yellow" onclick="changeCarColor('yellow')"></button>
+                <button class="color-btn black" onclick="changeCarColor('black')"></button>
+                <button class="color-btn gray" onclick="changeCarColor('gray')"></button>
+                <button class="color-btn white" onclick="changeCarColor('white')"></button>
+                <div style="display: flex;">
+                    <h3>$134,450</h3>
+                    <del style="padding-left: 6px; padding-top: 3px;">$140,700</del>
+                </div>
+            </div>
+            <div class="addCart paddings">
+                <button>
+                    <span><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></span>
+                    <p style="display: inline-block; padding-left: 5px;">Add To Cart</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function changeCarColor(color) {
+        let imgTag = document.getElementById('carImage');
+        let colorBtn = document.getElementById('colorButton');
+
+        if (color === 'yellow') {
+            imgTag.src = 'https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg'; // Yellow Car
+            colorBtn.style.backgroundColor = 'rgb(240, 240, 110)';
+        } else if (color === 'black') {
+            imgTag.src = 'https://images.pexels.com/photos/39855/pexels-photo-39855.jpeg'; // Black Car
+            colorBtn.style.backgroundColor = 'rgb(0, 0, 0)';
+        } else if (color === 'gray') {
+            imgTag.src = 'https://images.pexels.com/photos/100653/pexels-photo-100653.jpeg'; // Gray Car
+            colorBtn.style.backgroundColor = 'rgb(99, 99, 99)';
+        } else if (color === 'white') {
+            imgTag.src = 'https://images.pexels.com/photos/6276787/pexels-photo-6276787.jpeg'; // White Car
+            colorBtn.style.backgroundColor = 'rgb(255, 255, 255)';
+            colorBtn.style.border = '1px solid black';
+        }
+    }
+</script>
+
+</body>
+</html>

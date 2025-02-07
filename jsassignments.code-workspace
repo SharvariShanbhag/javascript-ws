@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "jsassignments",
+			"path": "../../html-css/jsassignments"
+		},
+		{
+			"name": "javascript-main",
+			"path": ".."
+		},
+		{
+			"path": "../../html-css/jsassignments/taskmanagement"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "javascript-main"
+	}
+}
