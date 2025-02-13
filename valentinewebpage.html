@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XOXO Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .header1{
+            height: 30px;
+            width: 100%;
+            background-color: rgb(202, 3, 3);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+            letter-spacing: 3px;
+            font-size: 8px;
+        }
+        .header1 h4{
+            padding-top: 16px;
+        }
+        .header2{
+            height: 100px;
+            width: 100%;
+            background-color: rgb(252, 252, 192);
+            padding-top: 20px;
+        }
+        .brandName{
+            display: flex;
+            justify-content: center;
+            color: red;
+            font-size: 13px;
+        }
+        .brandName h1{
+            letter-spacing: 4px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-top: 10px;
+        }
+        .navbarElements{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .socialMedia{
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+            justify-content: space-between;
+        }
+        .navbarItems{
+            display: flex;
+            align-items: center;
+            color: red;
+        }
+        .navbarItems li{
+            text-decoration: none;
+            list-style: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding-right:20px ;
+        }
+        .navbarItems li :hover{
+            color: white;
+        }
+        .cartDiv{
+            display: flex;
+            align-items: center;
+            font-size: 13px ;
+            gap: 5px;   
+        }
+        .cartDiv h4 {
+            font-weight: 500;
+        }
+        .ballonImg{
+            display: flex;
+        }
+        .ballonImg img{
+            width: 50%;
+        }
+        .mainSection{
+            height: 500px;
+            width: 100%;
+            background-color: #a30000;
+            
+        }
+        .mainSection h1{
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            color: rgb(252, 252, 192);
+            font-size: 38px;
+            font-style: italic;
+        }
+        .mainSection p{
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+            color: rgb(250, 250, 220);
+            letter-spacing: 1px;
+        }
+        .mainSection button{
+            height: 40px;
+            width: 150px;
+            background-color: rgb(255, 255, 206);
+            border: none;
+            border-radius: 40px;
+            
+        }
+        .findCardBtn{
+            margin-left: 607px;
+            margin-top: 30px;
+        }
+        .cardsSection{
+            margin-top: -270px;
+            height: 430px;
+            width: 740px;
+            background-color:white;
+            margin-left: 315px;
+        }
+        .cardsSection img{
+            margin-top: 20px;
+            margin-left: 24px;
+            height: 260px;
+            
+        }
+        .cardsFor{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(216, 38, 38);
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+        }
+        .shopCollection{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(216, 38, 38);
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 130px;
+        }
+        .shopCollection button{
+            background-color: white;
+            border: 2px solid rgb(216, 38, 38);
+            border-radius: 40px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            color: rgb(216, 38, 38);
+            font-weight: 600;
+        }
+        .offerSection{
+            display: flex;
+            justify-content: center;
+            height: 330px;
+            width: 100%;
+            background-color:#FF0800 ;
+        }
+        .btn1{
+            height: 200px;
+            width: 600px;
+            background-color: #FF0800;
+            border: 4px dashed white;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .btn1 h1{
+            font-style: italic;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 40px;
+
+        }
+        .btn2{
+            border: 4px dashed white;
+            display: flex;
+            margin-left: 610px;
+            margin-top: -80px;
+            background-color:red;
+            color: white;
+            border-radius: 30px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .qnaSection{
+            
+            margin-top: -430px;
+        }
+        .qnaSection h3{
+            font-style: italic;
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+        }
+        input[type="text"]{
+            /* width: 70px; height: 30px; */
+            margin: 5px;
+            border: 2px solid rgb(223, 40, 40);
+            border-radius: 4px;
+        }
+        input[type="email"]{
+            margin: 5px;
+            width: 420px; height: 30px;
+            border: 2px solid rgb(223, 40, 40);
+            border-radius: 4px;
+        }
+        .qnaSection button{
+            
+            color: #ffffff;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            background-color: #a30000;
+            border: none;
+            border-radius: 40px;
+        }
+        .footer{
+            
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            margin-top: 300px;
+            gap: 40px;
+            font-style: italic;
+            margin-bottom: 30px;
+            /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+        }
+        .footerItems{
+            
+            display: flex;
+            align-items: center;
+            color: red;
+        }
+        .footerItems li{
+            text-decoration: none;
+            list-style: none;
+            
+            font-weight: 500;
+            padding-right:20px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="header1">
+        <h4 style="display: flex; justify-content: center;">Order Your Love Card Today</h4>
+    </div>
+    <div class="header2">
+        <div class="brandName">
+            <h1>CUPID'S CART</h1>
+        </div>
+
+        <div class="navbarElements">
+            <div class="socialMedia">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-pinterest-p"></i>
+                
+            </div>
+            <div class="navbarItems">
+                <li>HOME</li>
+                <li>SHOP ALL</li>
+                <li>FOR HER</li>
+                <li>FOR HIM</li>
+                <li>ABOUT</li>
+                <li>CONTACT</li>
+            </div>
+            <div class="cartDiv"> 
+                <h4>CART</h4>
+                <i class="fa-solid fa-cart-flatbed"></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="ballonImg">
+        <img src="https://t3.ftcdn.net/jpg/02/45/94/10/360_F_245941096_JdeM91aP1UvDFFClE6h6A8d8HHn0S6Mc.jpg">
+        <img src="https://t3.ftcdn.net/jpg/02/45/94/10/360_F_245941096_JdeM91aP1UvDFFClE6h6A8d8HHn0S6Mc.jpg">
+
+    </div>
+    <div class="mainSection">
+        <h1>Valentien's Day Cards</h1>
+        <!-- <hr style="width: 40px; color: red;"> -->
+         <p>I'm a title. Click me to add your own text and edit me.</p>
+         <button class="findCardBtn" >Find Your Card</button>
+    </div>
+    <div class="cardsSection">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBh9ECqyLgM1Z6tSarVQxiGQs4eVD8_FD1XrHCU15OXGXw7h9URmhN04y3PW8lgP2E5jc&usqp=CAU" alt="">
+        <img src="https://sugarpaper.com/cdn/shop/files/VAL48_WillYouBeMyValentine-website.jpg?v=1736813934&width=533" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCECTDK9n-Ks1MK5cDOlZoH4IuAGPH3vdQyYfpVI0YaAnMmb-c7KI_ZFQsooh48fkZKAc&usqp=CAU" alt="">
+
+        <div class="cardsFor">
+            <h4>For Her</h4>
+            <h4> For All</h4>
+            <h4>For Him</h4>
+        </div>
+        <div class="shopCollection">
+            <button>Shop Collection</button>
+            <button>Shop Collection</button>
+            <button>Shop Collection</button>
+        </div>
+    </div>
+    <div class="offerSection">
+        <button class="btn1">
+            <h1 style="color: white; "> You should hurry Love</h1>
+            <hr style="width: 240px; height: 2px solid white;margin-left: 180px; margin-top: 10px;">
+            <div style="display: flex; justify-content: center; gap: 76px;"> 
+                <div style="margin-top: 10px; ">
+                    <div style="color: white;  ">Buy it now and get </div>
+                    <div style="color: white; font-style: italic; font-weight: 900;  font-size: 20px;">10% off</div>
+                    
+    
+                </div>
+                <div style="margin-top: 10px; ">
+                    <div style="color: white ; ">Use Promo Code </div>
+                    <div style="color: white; font-style: italic; font-weight: 900;font-size: 20px; ">LoveU</div>
+                </div>
+            </div>
+        </button>
+        
+    </div>
+    <button class="btn2"> Shop NOw</button>
+    <div class="ballonImg " style="margin-top: 40px;">
+        <img src="https://img.freepik.com/premium-photo/red-roses-valentine-s-day_58460-3091.jpg">
+        <img src="https://img.freepik.com/premium-photo/red-roses-valentine-s-day_58460-3091.jpg">
+
+    </div>
+    <div class="qnaSection">
+        <div>
+            <h3 style="color: #a30000; ">For any questions please send us a message.</h3>
+        </div>
+        <div class="qForm">
+            <form action="">
+                <div style="display: flex; justify-content: center;">
+                    <input type="text" placeholder="Name" style="width: 15%;height: 30px;">
+                    <input type="text" name="" id="" placeholder="Email" style="width: 15%;height: 30px;">
+                </div>
+                <div style="display: flex; justify-content: center; ;"><input type="email" placeholder="Subject"></div>
+                <div style="display: flex; justify-content: center;"><input type="email" placeholder="Message"></div>
+            </form>
+            <div style="display: flex; justify-content: center;"><button >Submit</button></div>
+            
+        </div>
+    </div>
+    <div class="footer" >
+        <div >
+            <h4 style="color: #FF0800; ">Follow Us Here & Happy Valentien's Day</h4>
+        </div>
+        <div class="socialMedia">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-pinterest-p"></i>
+            
+        </div>
+        <div class="footerItems">
+            <li>Shopping & Returns</li>
+            <li>Privecy Policy</li>
+            <li>FAQ</li>
+            
+        </div>
+    </div>
+    <div style="height: 30px; width: 100%; background-color: red; color: white; display:flex ;justify-content:center; align-items: center;">
+        <h5 >@2025 by CUPID'S CART Private Limited</h5>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valentines webpage</title>
+    <style>
+        /* .btn-PINK{
+
+        } */
+        #btnDemo{
+            height: 20px;
+            width: 60px;
+            background-color: blueviolet;
+            
+
+        }
+
+    </style>
+</head>
+<body>
+    <button id="btnDemo"> Click Here</button>
+    <script>
+        btnDemo = document.getElementById('btnDemo')
+        btnDemo.setAttribute('class' ,'btn-PINK')
+
+
+        function changeImage(){
+            imgElement = document.querySelector('#forImage')
+            pathSRC = imgElmt 
+        }
+
+        // onclick in other syntax
+        btnDemo.addEventListner('click',changeImage) -->
+    <!-- </script> -->
+
+    <!-- <button id="btnDemo">click me </button>
+
+    <script>
+        let btn = document.getElementById("colorButton");
+
+        btn.addEventListener("click" ,function(){
+            let currentColor = btn.getAttribute("style");
+
+            if(currentColor === "background-color : red;"){
+                btn.setAttribute("style", " background-color: blue");
+            }else
+        })
+    </script>
+</body>
+</html> --> 
+
+
+
