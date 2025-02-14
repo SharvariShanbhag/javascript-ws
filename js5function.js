@@ -121,3 +121,14 @@
 // }
 
 // console.log("GCD of 3 and 9 is ",GCD(3,9));
+
+
+//convert celcius to fahrenenheit
+
+function celsiusToFahrenheit(celcius){
+    let fahrenheit = (celcius * 9/5 )+32;
+    return `${fahrenheit}oF`;
+}
+let tempInput = 45;
+let tempConversion = celsiusToFahrenheit(tempInput);
+console.log(`input temp :${tempInput} oC to output :${tempConversion}`);
