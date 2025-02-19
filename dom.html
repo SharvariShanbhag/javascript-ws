@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            color: blue;
+        }
+        .newClass{
+            background-color: yellow;
+        }
+
+        .dark{
+            background-color: black;
+            color: white;
+        }
+        .light{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h2>Hello JS</h2>
+
+    <div class="box">first div</div>
+    <div class="box">first div</div>
+    <div class="box">first div</div>
+ -->
+
+<!-- new question -->
+    <p class="content">i am a paragraph</p>
+
+<!-- new question -->
+<!-- toggle button -switching betn two states  -->
+    <button id="mode">change mode</button>
+    <script>
+        // let h2= document.querySelector("h2");
+        // console.dir(h2.innerText);
+        // //to make change in text
+        // h2.innerText = h2.innerText + " from apana college students"
+        // console.log(h2.innerText)
+        
+        // let divs = document.querySelectorAll(".box")
+        // let index = 1;
+        // for(div of divs){
+        //     div.innerText = `New unique value is ${index}`;
+        //     index++;
+        // }
+
+//new question
+
+        // let newBtn = document.createElement("Button");
+        // newBtn.innerText = "click Me!!"
+
+        // newBtn.style.color = "white";
+        // newBtn.style.backgroundColor = "black";
+        // newBtn.style.border = "3px solid red";
+        // document.querySelector("body").prepend(newBtn)
+
+//new question
+
+        // let para = document.querySelector("p");
+        // para.classList.add("newClass")
+
+//new question
+        let modeBtn = document.querySelector("#mode") //select btn
+        let currentMode="light";
+        modeBtn.addEventListener("click", () => {
+            // console.log("you are trying to change mode")
+            if(currentMode === "light"){
+                currentMode = "dark"
+                // document.querySelector("body").style.backgroundColor ="black"
+                document.querySelector("body").classList.add("dark");
+                document.querySelector("body").classList.remove("light");
+            }else{
+                currentMode = "light";
+                // document.querySelector("body").style.backgroundColor ="white"
+                document.querySelector("body").classList.add("light");
+                document.querySelector("body").classList.remove("dark");
+
+            }
+            console.log(currentMode)//its toggling
+        })
+    </script>
+</body>
+</html>
