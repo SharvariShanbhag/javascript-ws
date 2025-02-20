@@ -1,0 +1,162 @@
+4.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    input {
+      width: 180px;
+      padding: 10px;
+      margin: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculator</h1>
+  <input type="text" id="num1" placeholder="Enter first number" class="inputNum">
+  <input type="text" id="num2" placeholder="Enter second number">
+  <br>
+  <button onclick="calculate('add')" class="btn btn-primary">Add</button>
+  <button onclick="calculate('subtract')" class="btn btn-primary">Subtract</button>
+  <button onclick="calculate('multiply')" class="btn btn-primary">Multiply</button>
+  <button onclick="calculate('divide')" class="btn btn-primary">Divide</button>
+  <div id="result">Result : </div>
+
+  <script>
+    let calculator = {
+      add: function(a, b) {
+        return a + b;
+      },
+      subtract: function(a, b) {
+        return a - b;
+      },
+      multiply: function(a, b) {
+        return a * b;
+      },
+      divide: function(a, b) {
+        return b !== 0 ? a / b : "Division by zero error";
+      }
+    };
+
+    function calculate(operation) {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let result = "";
+
+      switch (operation) {
+        case "add":
+          result = calculator.add(num1, num2);
+          break;
+        case "subtract":
+          result = calculator.subtract(num1, num2);
+          break;
+        case "multiply":
+          result = calculator.multiply(num1, num2);
+          break;
+        case "divide":
+          result = calculator.divide(num1, num2);
+          break;
+      }
+
+      document.getElementById("result").innerText = `Result: ${result}`;
+    }
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+
+//1.
+
+// let student ={
+//     fName : "jack",
+//     age : 21,
+//     grade : "A+"
+// };
+// console.log(student);
+
+// //add new property
+// student.subject = "Math";
+// console.log(student);
+
+// //update 
+// student.grade = "A++";
+// console.log(student);
+
+// //delete
+// delete student.age;
+// console.log(student);
+
+
+//2.
+
+// let book ={
+//     title : "AgniPankh",
+//     author : "APJ Kalam",
+//     details :{
+//         pages : 300,
+//         genere : "Motivational"
+//     }
+// };
+
+// console.log("pages:", book.details.pages);
+// console.log("Genere:" , book.details.genere);
+
+
+//3.
+
+// let product ={
+//     name : "Android",
+//     price : 90000,
+//     stock : 1000
+// };
+
+// //loop through each property 
+// //and then log its value
+// for(let key in product){                                    
+//     console.log(`${key} : ${product[key]}`);                             
+// }                                                        
+// //name : Android
+// //price : 90000
+// //stock : 1000
+
+// console.log(product);  //{ name: 'Android', price: 90000, stock: 1000 }
+
+
+//5.
+let p1 = {
+  name: "p1",
+  age: 25
+};
+
+let p2 = {
+  name: "p2",
+  age: 25
+};
+
+// Compare name and age properties
+let areNamesEqual = p1.name === p2.name;
+let areAgesEqual = p1.age === p2.age;
+
+console.log(`Are names equal? ${areNamesEqual}`);
+console.log(`Are ages equal? ${areAgesEqual}`);
+
+
+  </script>
+</body>
+</html>
