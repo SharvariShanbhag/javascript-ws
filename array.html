@@ -1,36 +1,221 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .box{
+      height: fit-content;
+      width: fit-content;
+      background-color: rgb(183, 248, 109);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px;
+    }
+    #taskInput{
+      
+      background-color: rgb(255, 255, 255);
+      height: 38px;
+      border: none;
+      color: rgb(0, 0, 0);
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <div class="assignment" id="marks-calculator">
-        <h3>2. Student Marks Calculator</h3>
-        <input type="number" id="markInput" placeholder="Enter a mark" />
-        <button onclick="addMark()">Add Mark</button>
-        <button onclick="calculateMarks()">Calculate</button>
-        <button onclick="resetMarks()">Reset</button>
-        <div class="output" id="marksOutput"></div>
-    </div>
+    }
+    .btn-custom:hover {
+       cursor: pointer;
+        background-color: rgb(202, 31, 111);
+        border: none; 
+        font-weight: 500;
+      }
+      #markInput{
+        background-color: rgb(255, 255, 255);
+        height: 38px;
+        border: none;
+        color: rgb(0, 0, 0);
+      }
+      #arraySearchInput{
+        background-color: rgb(255, 255, 255);
+        height: 38px;
+        border: none;
+        color: rgb(0, 0, 0);
+      }
+      #numberInput{
+        background-color: rgb(255, 255, 255);
+        height: 38px;
+        border: none;
+        color: rgb(0, 0, 0);
+      }
+  </style>
+</head>
+<body>
 
+  <!-- To-Do List Manager -->
 
+  <div class="box">
+    <div><h2>To-Do List Manager</h2>
+    <input id="taskInput" type="text" placeholder="Enter a task">
+    <button onclick="addTask()" class="btn btn-primary btn-custom">Add Task</button>
+    <button onclick="clearAll()"class="btn btn-primary btn-custom">Clear All</button>
+    <ul id="taskList"></ul></div>
+  </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById('taskInput');
+      const taskText = taskInput.value.trim();
+      if (taskText) {
+        const li = document.createElement('li');
+        li.textContent = taskText;
+        document.getElementById('taskList').appendChild(li);
+        taskInput.value = '';
+      }
+    }
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
+    function clearAll() {
+      document.getElementById('taskList').innerHTML = '';
+    }
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
 </html>
+
+
+<!-- 2.Student Marks Calculator -->
+
+<div class="box">
+  <div><h2>Student Marks Calculator</h2>
+  <input id="markInput" type="text" placeholder="Enter a mark">
+  <button onclick="addMark()"  class="btn btn-primary btn-custom">Add Mark</button>
+  <button onclick="calculateResults()"  class="btn btn-primary btn-custom">Calculate</button>
+  <div style="height: fit-content; width:fit-content; background-color: white; margin: 10px; padding: 20px; border-radius: 20px;">
+    <div>Total Marks: <span id="totalMarks">0</span></div>
+    <div>Average Mark: <span id="averageMark">0</span></div>
+    <div>Highest Mark: <span id="highestMark">0</span></div>
+    <div>Lowest Mark: <span id="lowestMark">0</span></div>
+  </div>
+</div>
+</div>
+
+<script>
+  let marks = [];
+
+  function addMark() {
+    const markInput = document.getElementById('markInput');
+    const mark = parseInt(markInput.value);
+    if (!isNaN(mark)) {
+      marks.push(mark);
+      markInput.value = '';
+    }
+  }
+
+  function calculateResults() {
+    if (marks.length === 0) return;
+    const total = marks.reduce((sum, mark) => sum + mark, 0);
+    document.getElementById('totalMarks').textContent = total;
+    document.getElementById('averageMark').textContent = (total / marks.length).toFixed(2);
+    document.getElementById('highestMark').textContent = Math.max(...marks);
+    document.getElementById('lowestMark').textContent = Math.min(...marks);
+  }
+</script>
+
+
+<!-- 3.Search in an Array -->
+
+<div class="box">
+  <div><h2>Search in an Array</h2>
+<input id="arraySearchInput" type="text" placeholder="Enter a value">
+<button onclick="searchArray()" class="btn btn-primary btn-custom">Search</button>
+<div id="searchResult">No matches found</div>
+  </div>
+</div>
+
+<script>
+  const sampleArray = ['audi', 'marcedez', 'farrari', 'kia'];
+
+  function searchArray() {
+    const searchInput = document.getElementById('arraySearchInput').value.trim();
+    const result = sampleArray.includes(searchInput) ? `${searchInput} found` : 'No matches found';
+    document.getElementById('searchResult').textContent = result;
+  }
+</script>
+
+
+
+<!-- 4. Filter Even and Odd Numbers-->
+<div class="box"><div><h2> Filter Even and Odd Numbers</h2>
+<input id="numberInput" type="text" placeholder="Enter a number">
+<button onclick="addNumber()" class="btn btn-primary btn-custom">Add Number</button>
+<button onclick="showEven()" class="btn btn-primary btn-custom">Show Even</button>
+<button onclick="showOdd()" class="btn btn-primary btn-custom">Show Odd</button>
+<button onclick="clearNumbers()" class="btn btn-primary btn-custom">Clear</button>
+<div style="height: fit-content; width:fit-content; background-color: white; margin: 10px; padding: 20px; border-radius: 20px;">
+  <div>Even Numbers: <span id="evenNumbers"></span></div>
+  <div>Odd Numbers: <span id="oddNumbers"></span></div>
+</div></div></div>
+
+<script>
+  let numbers = [];
+
+  function addNumber() {
+    const number = parseInt(document.getElementById('numberInput').value);
+    if (!isNaN(number)) numbers.push(number);
+    document.getElementById('numberInput').value = '';
+  }
+
+  function showEven() {
+    const evenNumbers = numbers.filter(num => num % 2 === 0);
+    document.getElementById('evenNumbers').textContent = evenNumbers.join(', ');
+  }
+
+  function showOdd() {
+    const oddNumbers = numbers.filter(num => num % 2 !== 0);
+    document.getElementById('oddNumbers').textContent = oddNumbers.join(', ');
+  }
+
+  function clearNumbers() {
+    numbers = [];
+    document.getElementById('evenNumbers').textContent = '';
+    document.getElementById('oddNumbers').textContent = '';
+  }
+</script>
+
+<!-- 5.Sort Names Alphabetically -->
+<div class="box"><div><h2>Sort Names Alphabetically</h2>
+<input id="nameInput" type="text" placeholder="Enter a name">
+<button onclick="addName()" class="btn btn-primary btn-custom">Add Name</button>
+<button onclick="sortNames()" class="btn btn-primary btn-custom">Sort</button>
+<button onclick="resetNames()" class="btn btn-primary btn-custom">Reset</button>
+<div style="height: fit-content; width: fit-content; background-color: white; padding: 10px;">Names: <span id="nameList"></span></div></div></div>
+
+<script>
+  let names = [];
+
+  function addName() {
+    const name = document.getElementById('nameInput').value.trim();
+    if (name) names.push(name);
+    document.getElementById('nameInput').value = '';
+    displayNames();
+  }
+
+  function sortNames() {
+    names.sort();
+    displayNames();
+  }
+
+  function resetNames() {
+    names = [];
+    displayNames();
+  }
+
+  function displayNames() {
+    document.getElementById('nameList').textContent = names.join(', ');
+  }
+</script>
+
