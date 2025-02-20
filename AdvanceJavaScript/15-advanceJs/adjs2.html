@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h3>timer</h3>
+        <h1><span id="hr"></span>00<span id="min"></span>00<span id="sec">00</span></h1>
+        <button id="startClock" class="btn btn-primary">Start</button>
+        <button id="pauseClock" class="btn btn-primary">Pause</button>
+        <button id="stopClock" class="btn btn-primary">Stop</button>
+    </div>
+    <script>
+        let hr=0;
+        let min=0;
+        let sec=0;
+        function timerClock(){
+            sec= sec+1;
+
+            if(sec==60){
+                sec =0;
+                min=min+1;
+
+                if(min==60){
+                    min=0;
+                    hr=hr+1;
+                    document.getElementById('hr').innerHTML =hr
+                }
+                document.getElementById('min').innerHTML =min
+            }
+            document.getElementById('sec').innerHTML =sec
+        }
+        function for1SecInterval(){
+            startTimer =srtInterval(timerClock,1000);
+        }
+        function pauseClock(){
+            clearInterval(startTimer)
+        }
+        function resetClock(){
+            sec,min,hr =0;
+            document.getElementById('hr').innerHTML = hr
+            document.getElementById('min').innerHTML = min
+            document.getElementById('sec').innerHTML = sec
+        }
+        document.getElementById('start').addEventListener('click', for1SecInterval)
+        document.getElementById('pause').addEventListener('click', pauseClock)
+        document.getElementById('reset').addEventListener('click', resetClock)
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
