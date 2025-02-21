@@ -1,63 +1,151 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <title>Stock Management</title>
     <style>
-      
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        margin-top: 20px;
+      }
+      .card {
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .card.bg-custom {
+        background-color: #f13bab !important;
+        color: white;
+      }
+      .btn-primary {
+        background-color: #000000;
+        border-color: #000;
+      }
+      .btn-danger {
+        background-color: #ffe341;
+        border-color: #ffe341;
+      }
+      .btn-warning {
+        background-color: #74a8f5;
+        border-color: #3f83e9;
+      }
     </style>
   </head>
   <body>
-  
-    <div class="cotainer w-50 mx-auto">
-        
-            <div class="form-group">
-              <label for="name">Product Name</label>
-              <input type="text" class="form-control" id="name" >
-            </div>
-            <div class="form-group">
-                <label for="name">Product Price</label>
-                <input type="text" class="form-control" id="price" >
-            </div>
-            <div class="form-group">
-                <label for="name">Product Category</label>
-                <input type="text" class="form-control" id="category" >
-            </div>
-            <div class="form-group">
-                <label for="name">Product Stock</label>
-                <input type="number" class="form-control" id="stock" >
-            </div>
-            <button onclick="addProduct()" class="btn btn-primary">Add New Product</button>
-          
+    <div class="container w-50 mx-auto">
+      <h2 class="text-center text-dark">Stock Management</h2>
+      <div class="form-group">
+        <label for="name">Product Name</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="form-group">
+        <label for="price">Product Price</label>
+        <input type="text" class="form-control" id="price">
+      </div>
+      <div class="form-group">
+        <label for="category">Product Category</label>
+        <input type="text" class="form-control" id="category">
+      </div>
+      <div class="form-group">
+        <label for="stock">Product Stock</label>
+        <input type="number" class="form-control" id="stock">
+      </div>
+      <button onclick="addProduct()" class="btn btn-primary btn-block">Add New Product</button>
     </div>
-<hr>
-<div class="form-group">
-    <input type="text" class="form-control" id="filterKey" placeholder="filterByName">
-    <button onclick="filterProducts()" class="btn btn-primary">FilterByName</button>
+    <hr>
+    <div class="container">
+      <div class="form-group">
+        <input type="text" class="form-control" id="filterKey" placeholder="Filter by name or category">
+        <button onclick="filterProducts()" class="btn btn-primary mt-2">Filter</button>
+      </div>
+      <div class="row" id="productList"></div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" id="updateProd"></div>
+    </div>
+    <script>
+      let products = JSON.parse(localStorage.getItem('Products')) || [
+        { id: 1, name: "Laptop", price: 1000, category: "Electronics", stock: 5 },
+        { id: 2, name: "Headphones", price: 200, category: "Electronics", stock: 15 },
+        { id: 3, name: "T-shirt", price: 20, category: "Apparel", stock: 50 }
+      ];
 
-    <button onclick="filterByCategary()" class="btn btn-primary">FilterByCategory</button>
-  </div>
- <div class="container">
-    <div class="row" id="productList"> </div>
- </div>
+      function setToLocal() {
+        localStorage.setItem('Products', JSON.stringify(products));
+      }
 
- <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" id="updateProd">
-    
-  </div>
-</div>
+      function renderList() {
+        document.getElementById('productList').innerHTML = products.map(product => `
+          <div class="col-md-4">
+            <div class="card bg-custom" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title text-warning">${product.name}</h5>
+                <p class="card-text">Category: <span class='text-light'>${product.category}</span></p>
+                <p class="card-text">Price: <span class='text-light'>${product.price}</span></p>
+                <p class="card-text">Stock: <span class='text-light'>${product.stock}</span></p>
+                <button class="btn btn-danger" onclick='deleteProd(${product.id})'>Delete</button>
+                <button class="btn btn-warning" onclick='editProd(${product.id})' data-toggle="modal" data-target="#exampleModal">Edit</button>
+              </div>
+            </div>
+          </div>`).join('');
+      }
 
-    <script src="./script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+      function addProduct() {
+        let name = document.getElementById('name').value;
+        let price = document.getElementById('price').value;
+        let category = document.getElementById('category').value;
+        let stock = document.getElementById('stock').value;
+        if (!name || !price || !category || !stock) return alert("All fields are required");
+        let newProduct = { id: Date.now(), name, price, category, stock };
+        products.push(newProduct);
+        setToLocal();
+        renderList();
+      }
 
+      function filterProducts() {
+        let key = document.getElementById('filterKey').value.toLowerCase();
+        let filteredProducts = products.filter(p => p.name.toLowerCase().includes(key) || p.category.toLowerCase().includes(key));
+        renderList(filteredProducts);
+      }
+
+      function deleteProd(ID) {
+        products = products.filter(p => p.id !== ID);
+        setToLocal();
+        renderList();
+      }
+
+      function editProd(ID) {
+        let product = products.find(p => p.id === ID);
+        document.getElementById('updateProd').innerHTML = `
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit Product</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Product Price</label>
+                <input type="text" class="form-control" id="updatedPrice" value="${product.price}">
+              </div>
+              <div class="form-group">
+                <label>Product Stock</label>
+                <input type="number" class="form-control" id="updatedStock" value="${product.stock}">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick='updateProduct(${product.id})'>Update</button>
+            </div>
+          </div>`;
+      }
+
+      renderList();
+    </script>
   </body>
 </html>
