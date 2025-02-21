@@ -11,7 +11,7 @@
     .box{
       height: fit-content;
       width: fit-content;
-      background-color: rgb(183, 248, 109);
+      background-color: rgb(166, 255, 64);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -27,9 +27,12 @@
       color: rgb(0, 0, 0);
 
     }
+    .btn-custom{
+      background-color: rgb(13, 126, 255);
+    }
     .btn-custom:hover {
        cursor: pointer;
-        background-color: rgb(202, 31, 111);
+        background-color: rgb(243, 36, 132);
         border: none; 
         font-weight: 500;
       }
@@ -60,8 +63,8 @@
   <div class="box">
     <div><h2>To-Do List Manager</h2>
     <input id="taskInput" type="text" placeholder="Enter a task">
-    <button onclick="addTask()" class="btn btn-primary btn-custom">Add Task</button>
-    <button onclick="clearAll()"class="btn btn-primary btn-custom">Clear All</button>
+    <button onclick="addTask()" class="btn btn-custom">Add Task</button>
+    <button onclick="clearAll()"class="btn  btn-custom">Clear All</button>
     <ul id="taskList"></ul></div>
   </div>
 
@@ -92,8 +95,8 @@
 <div class="box">
   <div><h2>Student Marks Calculator</h2>
   <input id="markInput" type="text" placeholder="Enter a mark">
-  <button onclick="addMark()"  class="btn btn-primary btn-custom">Add Mark</button>
-  <button onclick="calculateResults()"  class="btn btn-primary btn-custom">Calculate</button>
+  <button onclick="addMark()"  class="btn btn-custom">Add Mark</button>
+  <button onclick="calculateResults()"  class="btn btn-custom">Calculate</button>
   <div style="height: fit-content; width:fit-content; background-color: white; margin: 10px; padding: 20px; border-radius: 20px;">
     <div>Total Marks: <span id="totalMarks">0</span></div>
     <div>Average Mark: <span id="averageMark">0</span></div>
@@ -131,7 +134,7 @@
 <div class="box">
   <div><h2>Search in an Array</h2>
 <input id="arraySearchInput" type="text" placeholder="Enter a value">
-<button onclick="searchArray()" class="btn btn-primary btn-custom">Search</button>
+<button onclick="searchArray()" class="btn btn-custom">Search</button>
 <div id="searchResult">No matches found</div>
   </div>
 </div>
@@ -151,10 +154,10 @@
 <!-- 4. Filter Even and Odd Numbers-->
 <div class="box"><div><h2> Filter Even and Odd Numbers</h2>
 <input id="numberInput" type="text" placeholder="Enter a number">
-<button onclick="addNumber()" class="btn btn-primary btn-custom">Add Number</button>
-<button onclick="showEven()" class="btn btn-primary btn-custom">Show Even</button>
-<button onclick="showOdd()" class="btn btn-primary btn-custom">Show Odd</button>
-<button onclick="clearNumbers()" class="btn btn-primary btn-custom">Clear</button>
+<button onclick="addNumber()" class="btn  btn-custom">Add Number</button>
+<button onclick="showEven()" class="btn btn-custom">Show Even</button>
+<button onclick="showOdd()" class="btn  btn-custom">Show Odd</button>
+<button onclick="clearNumbers()" class="btn  btn-custom">Clear</button>
 <div style="height: fit-content; width:fit-content; background-color: white; margin: 10px; padding: 20px; border-radius: 20px;">
   <div>Even Numbers: <span id="evenNumbers"></span></div>
   <div>Odd Numbers: <span id="oddNumbers"></span></div>
@@ -189,9 +192,9 @@
 <!-- 5.Sort Names Alphabetically -->
 <div class="box"><div><h2>Sort Names Alphabetically</h2>
 <input id="nameInput" type="text" placeholder="Enter a name">
-<button onclick="addName()" class="btn btn-primary btn-custom">Add Name</button>
-<button onclick="sortNames()" class="btn btn-primary btn-custom">Sort</button>
-<button onclick="resetNames()" class="btn btn-primary btn-custom">Reset</button>
+<button onclick="addName()" class="btn btn-custom">Add Name</button>
+<button onclick="sortNames()" class="btn  btn-custom">Sort</button>
+<button onclick="resetNames()" class="btn  btn-custom">Reset</button>
 <div style="height: fit-content; width: fit-content; background-color: white; padding: 10px;">Names: <span id="nameList"></span></div></div></div>
 
 <script>
