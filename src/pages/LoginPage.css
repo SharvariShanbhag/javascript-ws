@@ -1,10 +1,10 @@
 /* Full-screen gradient background */
 .login-container {
-  height: 100vh;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #f9e5f0, #f1e0d6);
+  background: white;
 }
 
 /* Centered login card */
@@ -63,14 +63,14 @@
   font-size: 16px;
   font-weight: bold;
   border-radius: 6px;
-  background-color: #28a745;
+  background-color: black;
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .btn-success:hover {
-  background-color: #218838;
+  background-color: #55a630;
 }
 
 /* Error message */
@@ -94,4 +94,56 @@
 
 .register-link a:hover {
   text-decoration: underline;
+}
+/* Light and Dark Theme Containers */
+.light-theme {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.dark-theme {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Title Background Styling */
+.light-title-bg {
+  background-color: #e0e0e0; /* Light grey background for light mode */
+  color: #000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.dark-title-bg {
+  background-color: #333; /* Dark grey background for dark mode */
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Other Styles */
+.dark-theme .login-card {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 1px solid #444;
+  margin: 20px;
+}
+
+/* .dark-theme .form-control {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+} */
+
+.dark-theme .form-control::placeholder {
+  color: #bbb;
+}
+
+.dark-theme .btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.dark-theme .register-link a {
+  color: #0d6efd;
 }

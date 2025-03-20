@@ -8,8 +8,8 @@ const Card = ({ fruit }) => {
       <img src={fruit.image} alt="Not available" className="ImgCard" />
       <h3 className="headingCard">{fruit.name}</h3>
       <p className="textCard">Price: ${fruit.price}</p>
-      <p className="textCard" style={{ color: "green", fontWeight: "bold" }}>
-        ✅ In Stock
+      <p className="textCard" style={{ color: "green", fontWeight: "bold", margin:"20px" }}>
+        ✅    In Stock
       </p>
       <Link className="addToCartBtn" to={`/card-detail/${fruit.id}`}>More Info</Link>
     </div>

@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaUser, FaLock } from "react-icons/fa"; // Import icons
-import "./LoginPage.css"; // Import CSS for better styling
+import { FaUser, FaLock } from "react-icons/fa"; 
+import { ThemeContext } from "../hooks/ThemeContext"; 
+import "./LoginPage.css"; 
 
 const LoginPage = ({ setIsLoggedIn, setLoggedUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { theme } = useContext(ThemeContext); 
 
   function handleLogin(event) {
     event.preventDefault();
-    setError(""); // Reset error message
+    setError(""); 
     const storedUser = JSON.parse(localStorage.getItem("user"));
 
     if (storedUser && storedUser.email === email && storedUser.password === password) {
@@ -24,9 +26,11 @@ const LoginPage = ({ setIsLoggedIn, setLoggedUser }) => {
   }
 
   return (
-    <div className="login-container">
+    <div className={`login-container ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
       <div className="login-card">
-        <h2 className="login-title">Welcome Back</h2>
+        <h2 className={`login-title ${theme === "dark" ? "dark-title-bg" : "light-title-bg"}`}>
+          Welcome Back
+        </h2>
         <p className="login-subtitle">Please login to continue</p>
         
         {error && <p className="error-message">{error}</p>}
